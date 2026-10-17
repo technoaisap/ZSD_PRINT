@@ -1,0 +1,15 @@
+CLASS zcx_bill_batch_query DEFINITION
+  PUBLIC
+    INHERITING FROM cx_rap_query_provider
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcx_bill_batch_query IMPLEMENTATION.
+ENDCLASS.

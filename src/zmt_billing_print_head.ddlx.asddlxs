@@ -1,0 +1,136 @@
+@Metadata.layer: #CORE
+
+@UI:{ headerInfo: { typeName: 'Billing Document Header',
+                    typeNamePlural: 'Billing Document Header',
+                    title:{ type: #STANDARD,label: 'Billing Document Header',
+                           value:'BillingDocument' } },
+      presentationVariant:[{ sortOrder: [{ by: 'BillingDocument', direction:  #ASC }] }]  }
+annotate entity ZC_BILLING_PRINT_HEAD with
+{
+  @UI.facet: [
+  {
+    id:            'BillingDocument',
+    purpose:       #STANDARD,
+    position:      10,
+    label:         'Billing Document Header',
+    type:          #IDENTIFICATION_REFERENCE
+  },
+
+         {        id: 'BillingDocumentItem',
+                    purpose: #STANDARD,
+                    type: #LINEITEM_REFERENCE,
+                    label: 'Billing Item Details',
+                    position: 20,
+                    targetElement: '_item'     }
+
+                    ]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification:[{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  BillingDocument;
+  @UI.lineItem: [{ position: 12 }]
+  @UI.identification:[{ position: 12 }]
+  ShpName;
+  @UI.lineItem: [{ position: 14 }]
+  @UI.identification:[{ position: 14 }]
+  BtpName;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification:[{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  BillingDocumentType;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification:[{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  BillingDocumentDate;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification:[{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  SalesOrganization;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification:[{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  @Consumption.valueHelpDefinition: [ { entity: { name: 'I_CompanyCode', element: 'CompanyCode'}}]
+  CompanyCode;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification:[{ position: 60 }]
+  @UI.selectionField: [{ position: 60 }]
+  @Consumption.valueHelpDefinition: [ { entity: { name: 'I_Plant', element: 'Plant'}}]
+  Plant;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification:[{ position: 70 }]
+  @UI.selectionField: [{ position: 70 }]
+  FiscalYear;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.identification:[{ position: 80 }]
+  @UI.selectionField: [{ position: 80 }]
+  @Consumption.valueHelpDefinition: [ { entity: { name: 'I_DistributionChannel', element: 'DistributionChannel'}}]
+  DistributionChannel;
+
+  @UI.identification: [
+      {
+        position: 90,
+        type: #WITH_URL,
+        url: 'FormURL_TaxInvoiceDomestic'
+      }
+    ]
+  Form_TaxInvoiceDomestic;
+
+
+  @UI.identification: [
+    {
+      position: 100,
+      type: #WITH_URL,
+      url: 'FormURL_TaxInvoiceExport'
+    }
+  ]
+  Form_TaxInvoiceExport;
+
+  //  @UI.fieldControl: 'FC_ProformaDomestic'
+  @UI.identification: [
+    {
+      position: 110,
+      type: #WITH_URL,
+      url: 'FormURL_ProformaDomestic'
+    }
+  ]
+  Form_ProformaDomestic;
+
+
+  @UI.identification: [
+    {
+      position: 120,
+      type: #WITH_URL,
+      url: 'FormURL_ProformaExport'
+    }
+  ]
+  Form_ProformaExport;
+
+  @UI.identification: [
+  {
+    position: 130,
+    type: #WITH_URL,
+    url: 'FormURL_CommercialCHA'
+  }
+  ]
+  Form_CommercialCHA;
+  
+  @UI.identification: [
+  {
+    position: 140,
+    type: #WITH_URL,
+    url: 'FormURL_CommercialBuyer'
+  }
+  ]
+  Form_CommercialBuyer;
+  
+    @UI.identification: [
+  {
+    position: 150,
+    type: #WITH_URL,
+    url: 'FormURL_DeliveryChallan'
+  }
+  ]
+  Form_DeliveryChallan;
+
+
+}

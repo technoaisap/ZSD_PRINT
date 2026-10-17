@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+@EndUserText.label: 'Billing Document Item'
+@UI:{ headerInfo: { typeName: 'Billing Document Item',
+                    typeNamePlural: 'Billing Document Item',
+                    title:{ type: #STANDARD,label: 'Billing Document Item',
+                           value:'BillingDocument' } },
+      presentationVariant:[{ sortOrder: [{ by: 'BillingDocument', direction:  #ASC }] }]  }
+annotate entity ZC_BILLING_PRINT_ITEM with
+{
+
+  @UI.facet: [{
+              id: 'BillingDocument',
+              purpose: #STANDARD,
+              position: 10,
+              label: 'Billing Document Item',
+              type: #IDENTIFICATION_REFERENCE     }]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  BillingDocument;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  BillingDocumentItem;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  Material;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  SalesOffice;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  Batch;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60 }]
+  @UI.selectionField: [{ position: 60 }]
+  Plant;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 70 }]
+  @UI.selectionField: [{ position: 70 }]
+  SalesDocument;
+
+
+}

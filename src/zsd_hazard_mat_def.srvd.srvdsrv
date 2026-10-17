@@ -1,0 +1,4 @@
+@EndUserText.label: 'Hazardous Material'
+define service ZSD_HAZARD_MAT_DEF {
+  expose ZC_HAZARD_MAT;
+}

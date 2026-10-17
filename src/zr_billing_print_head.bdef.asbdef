@@ -1,0 +1,27 @@
+unmanaged implementation in class zbp_r_billing_print_head unique;
+strict ( 2 );
+
+define behavior for ZR_BILLING_PRINT_HEAD //alias <alias_name>
+//persistent table vbrk
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create ( authorization : global );
+//  update;
+//  delete;
+  field ( readonly ) BillingDocument;
+  association _item { create; }
+}
+
+define behavior for ZR_BILLING_PRINT_ITEM //alias <alias_name>
+//persistent table vbrp
+lock dependent by _head
+authorization dependent by _head
+//etag master <field_name>
+{
+//  update;
+//  delete;
+  field ( readonly ) BillingDocument, BillingDocumentItem;
+  association _head;
+}

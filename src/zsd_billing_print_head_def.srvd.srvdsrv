@@ -1,0 +1,15 @@
+@EndUserText.label: 'Billing Print'
+define service ZSD_BILLING_PRINT_HEAD_DEF {
+  expose ZC_BILLING_PRINT_HEAD;
+  expose ZC_BILLING_PRINT_ITEM;
+  expose ZC_BILLING_PRINT_HU;
+  expose ZCE_TAX_INVOICE_DOMESTIC;
+  expose ZCE_TAX_INVOICE_EXPORT;
+  expose ZCE_PROFORMA_INVOICE_DOMESTIC;
+  expose ZCE_PROFORMA_INVOICE_EXPORT;
+  expose ZCE_COMMERCIAL_INVOICE_CHA;
+  expose ZCE_COMMERCIAL_INVOICE_BUYER;
+  expose ZCE_DELIEVRY_CHALLAN;
+  expose ZC_BILLING_PRINT_TAX;
+  expose ZCE_BILL_ITEM_BATCH           as BillingItemBatch;
+}

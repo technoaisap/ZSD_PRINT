@@ -1,0 +1,22 @@
+managed implementation in class zbp_r_hazard_mat unique;
+strict ( 2 );
+
+define behavior for ZR_HAZARD_MAT //alias <alias_name>
+persistent table ztb_hazard_mat
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+//  field ( readonly ) Materialcode;
+
+  mapping for ztb_hazard_mat
+  {
+    Materialcode = MaterialCode;
+    Materialdesc = MaterialDesc;
+    licenseno    = licenseno;
+    validity     = validity1;
+  }
+}

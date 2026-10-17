@@ -1,0 +1,58 @@
+@Metadata.layer: #CORE
+@EndUserText.label: 'Billing Document Handling Unit'
+@UI:{ headerInfo: { typeName: 'Billing Handling Unit',
+                    typeNamePlural: 'Billing Handling Unit',
+                    title:{ type: #STANDARD,label: 'Billing handling Unit',
+                           value:'DeliveryDocument' } },
+      presentationVariant:[{ sortOrder: [{ by: 'DeliveryDocument', direction:  #ASC }] }]  }
+annotate entity ZC_BILLING_PRINT_HU with
+{
+  @UI.facet: [{
+                id: 'DeliveryDocument',
+                purpose: #STANDARD,
+                position: 10,
+                label: 'Billing handling Unit',
+                type: #IDENTIFICATION_REFERENCE     }
+          ]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  DeliveryDocument;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  HigherLvlItmOfBatSpltItm;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  HandlingUnitQuantity;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  BillingDocument;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  BillingDocumentItem;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60 }]
+  TotalHandlingUnitQuantity;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 70 }]
+  TotalNetWeight;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.identification: [{ position: 80 }]
+  TotalTareWeight;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.identification: [{ position: 80 }]
+  TotalGrossWeight;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.identification: [{ position: 90 }]
+  TotalQty;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.identification: [{ position: 100 }]
+  NoOfPack;
+  /* Associations */
+  //  _item;
+
+}

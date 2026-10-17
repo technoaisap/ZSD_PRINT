@@ -1,0 +1,46 @@
+@Metadata.layer: #CORE
+@UI:{
+    headerInfo: {
+                      typeName: 'Hazardous Material',
+                      typeNamePlural: 'Hazardous Material',
+                      title: {
+                               type: #STANDARD,
+                               value: 'MaterialCode'     } } }
+annotate entity ZC_HAZARD_MAT with
+{
+
+  @UI.facet: [{
+   id: 'MaterialCode',
+   purpose: #STANDARD,
+   position: 10,
+   label: 'Hazardous Material',
+   type: #IDENTIFICATION_REFERENCE     } ]
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification:[{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [{
+  entity: {
+    name    : 'ZMATERIAL_F4',
+    element : 'Material'
+  },
+  additionalBinding: [{
+    localElement : 'Materialdesc',
+    element      : 'MaterialDesc'
+  }]
+  }]
+  Materialcode;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification:[{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  Materialdesc;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification:[{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  Licenseno;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification:[{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  Validity;
+
+}
